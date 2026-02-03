@@ -1,5 +1,6 @@
-# Placeholder to keep images directory in git
-# Add your images here:
+# Static Assets
+# Place your images and other static files here:
 # - founder.jpg (3:4 aspect ratio, recommended 800x1067px)
 # - video-thumbnail.jpg (16:9 aspect ratio, recommended 1600x900px)
 # - og-image.jpg (1200x630px for social sharing)
+# - favicon.ico

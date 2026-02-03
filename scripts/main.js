@@ -3,20 +3,19 @@
  * Built on trust. Hosting without pressure.
  */
 
+import { createClient } from '@supabase/supabase-js';
+
 // ══════════════════════════════════════════════════════════════
-// CONFIGURATION
+// CONFIGURATION (from environment variables)
 // ══════════════════════════════════════════════════════════════
 
 const CONFIG = {
-  // Supabase configuration - replace with your actual credentials
   supabase: {
-    url: 'YOUR_SUPABASE_URL',
-    anonKey: 'YOUR_SUPABASE_ANON_KEY',
+    url: import.meta.env.VITE_SUPABASE_URL || '',
+    anonKey: import.meta.env.VITE_SUPABASE_ANON_KEY || '',
     table: 'subscribers'
   },
-  // Video URL (YouTube or Vimeo embed URL)
-  videoUrl: 'https://www.youtube.com/embed/VIDEO_ID?autoplay=1',
-  // Animation settings
+  videoUrl: import.meta.env.VITE_VIDEO_EMBED_URL || 'https://www.youtube.com/embed/VIDEO_ID?autoplay=1',
   animation: {
     revealThreshold: 0.15,
     revealRootMargin: '-30px'
@@ -30,11 +29,11 @@ const CONFIG = {
 let supabase = null;
 
 function initSupabase() {
-  if (CONFIG.supabase.url !== 'YOUR_SUPABASE_URL' && window.supabase) {
-    supabase = window.supabase.createClient(
-      CONFIG.supabase.url,
-      CONFIG.supabase.anonKey
-    );
+  if (CONFIG.supabase.url && CONFIG.supabase.anonKey) {
+    supabase = createClient(CONFIG.supabase.url, CONFIG.supabase.anonKey);
+    console.log('Supabase initialized');
+  } else {
+    console.warn('Supabase credentials not configured - running in demo mode');
   }
 }
 
