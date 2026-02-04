@@ -48,8 +48,9 @@ function initScrollProgress() {
   function updateProgress() {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    const scrollPercent = docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0;
     progress.style.width = scrollPercent + '%';
+    progress.setAttribute('aria-valuenow', Math.round(scrollPercent));
   }
 
   window.addEventListener('scroll', updateProgress, { passive: true });
@@ -217,9 +218,9 @@ function initVideoModal() {
     lastFocusedElement = document.activeElement;
     videoModal.classList.add('active');
     videoModal.setAttribute('aria-hidden', 'false');
-    videoIframe.src = CONFIG.videoUrl;
+    if (videoIframe) videoIframe.src = CONFIG.videoUrl;
     document.body.style.overflow = 'hidden';
-    videoModalClose.focus();
+    if (videoModalClose) videoModalClose.focus();
 
     // Trap focus in modal
     document.addEventListener('keydown', trapFocus);
@@ -290,6 +291,25 @@ function initVideoModal() {
 // EMAIL FORM
 // ══════════════════════════════════════════════════════════════
 
+const DEMO_STORAGE_KEY = 'playthings_subscribers';
+
+function getStoredSubscribers() {
+  try {
+    const raw = localStorage.getItem(DEMO_STORAGE_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
+  }
+}
+
+function storeSubscriber(email) {
+  const list = getStoredSubscribers();
+  if (!list.includes(email.toLowerCase())) {
+    list.push(email.toLowerCase());
+    localStorage.setItem(DEMO_STORAGE_KEY, JSON.stringify(list));
+  }
+}
+
 function initEmailForm() {
   const form = document.getElementById('emailForm');
   const emailInput = document.getElementById('emailInput');
@@ -298,18 +318,29 @@ function initEmailForm() {
 
   if (!form) return;
 
-  function showMessage(message, type) {
+  function showMessage(message, type, assertive = false) {
     formMessage.textContent = message;
     formMessage.className = `form-message visible ${type}`;
+    formMessage.setAttribute('role', type === 'error' ? 'alert' : 'status');
+    formMessage.setAttribute('aria-live', assertive ? 'assertive' : 'polite');
 
-    // Auto-hide after 5 seconds
+    if (type === 'success') {
+      formMessage.setAttribute('tabindex', '-1');
+      formMessage.focus({ preventScroll: true });
+    }
+    emailInput.removeAttribute('aria-invalid');
+    if (type === 'error') {
+      emailInput.setAttribute('aria-invalid', 'true');
+    }
+
     setTimeout(() => {
       formMessage.classList.remove('visible');
-    }, 5000);
+    }, 6000);
   }
 
   function setLoading(loading) {
     submitButton.disabled = loading;
+    submitButton.setAttribute('aria-busy', loading ? 'true' : 'false');
     submitButton.classList.toggle('loading', loading);
   }
 
@@ -319,21 +350,20 @@ function initEmailForm() {
     const email = emailInput.value.trim();
 
     if (!email) {
-      showMessage('Please enter your email address.', 'error');
+      showMessage('Please enter your email address.', 'error', true);
       return;
     }
 
-    // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      showMessage('Please enter a valid email address.', 'error');
+      showMessage('Please enter a valid email address.', 'error', true);
       return;
     }
 
     setLoading(true);
+    emailInput.removeAttribute('aria-invalid');
 
     try {
-      // If Supabase is configured, save to database
       if (supabase) {
         const { error } = await supabase
           .from(CONFIG.supabase.table)
@@ -346,9 +376,8 @@ function initEmailForm() {
           ]);
 
         if (error) {
-          // Check for duplicate email
           if (error.code === '23505') {
-            showMessage('You\'re already on the list! We\'ll be in touch.', 'success');
+            showMessage("You're already on the list. We'll be in touch.", 'success');
             emailInput.value = '';
             setLoading(false);
             return;
@@ -356,25 +385,20 @@ function initEmailForm() {
           throw error;
         }
       } else {
-        // Fallback: simulate API call for demo
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        console.log('Email submitted (demo mode):', email);
+        // Demo mode: persist to localStorage so signup "goes somewhere"
+        storeSubscriber(email);
+        await new Promise(resolve => setTimeout(resolve, 600));
       }
 
-      showMessage('Welcome to PlayThings. We\'ll be in touch.', 'success');
+      showMessage("You're on the list. We'll be in touch.", 'success');
       emailInput.value = '';
 
-      // Track conversion (if analytics is available)
       if (typeof gtag === 'function') {
-        gtag('event', 'sign_up', {
-          method: 'email',
-          event_category: 'engagement'
-        });
+        gtag('event', 'sign_up', { method: 'email', event_category: 'engagement' });
       }
-
     } catch (error) {
       console.error('Subscription error:', error);
-      showMessage('Something went wrong. Please try again.', 'error');
+      showMessage('Something went wrong. Please try again.', 'error', true);
     } finally {
       setLoading(false);
     }
@@ -391,7 +415,12 @@ function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
-      if (href === '#') return;
+      if (href === '#') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        history.replaceState(null, null, window.location.pathname || '/');
+        return;
+      }
 
       const target = document.querySelector(href);
       if (target) {
