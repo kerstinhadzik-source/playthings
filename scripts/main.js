@@ -65,6 +65,22 @@ function initNavigation() {
   const nav = document.getElementById('mainNav');
   if (!nav) return;
 
+  const wordmark = nav.querySelector('.nav-wordmark');
+  if (wordmark) {
+    // Keep wordmark visible (override any script or style that hides it)
+    function keepWordmarkVisible() {
+      wordmark.style.setProperty('opacity', '1', 'important');
+      wordmark.style.setProperty('visibility', 'visible', 'important');
+      wordmark.style.setProperty('display', 'inline-block', 'important');
+    }
+    keepWordmarkVisible();
+    document.addEventListener('DOMContentLoaded', keepWordmarkVisible);
+    window.addEventListener('load', keepWordmarkVisible);
+    // Re-apply for a few seconds in case something hides it after load
+    const interval = setInterval(keepWordmarkVisible, 200);
+    setTimeout(() => clearInterval(interval), 3000);
+  }
+
   let ticking = false;
 
   function updateNav() {
