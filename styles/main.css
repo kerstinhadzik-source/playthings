@@ -413,6 +413,15 @@ nav.scrolled {
   margin-bottom: var(--space-md);
 }
 
+.hero-supporting {
+  font-family: var(--font);
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: var(--space-lg);
+}
+
 .hero-btn {
   display: inline-block;
   font-family: var(--font);
@@ -478,7 +487,8 @@ nav.scrolled {
 }
 
 .block-section--dark .block-body,
-.block-section--dark .block-emphasis {
+.block-section--dark .block-emphasis,
+.block-section--dark .built-list {
   color: #fff;
 }
 
