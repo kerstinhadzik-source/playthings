@@ -39,6 +39,18 @@
   ],
   "rewrites": [
     {
+      "source": "/login",
+      "destination": "/login.html"
+    },
+    {
+      "source": "/products",
+      "destination": "/products.html"
+    },
+    {
+      "source": "/crm",
+      "destination": "/crm.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

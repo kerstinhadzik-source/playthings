@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="playthings — Curated intimacy products. Clean, affordable, couples-friendly. No hype, just quality.">
+  <meta name="theme-color" content="#f5f1ed">
+
+  <meta property="og:title" content="playthings — Products">
+  <meta property="og:description" content="Curated intimacy products built for relationship-based businesses. Browse by category.">
+  <meta property="og:type" content="website">
+
+  <title>playthings — Products</title>
+
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/products.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <a href="/" class="nav-wordmark-fixed" id="navWordmark" aria-label="playthings home">playthings</a>
+  <nav id="mainNav" role="navigation" aria-label="Main navigation">
+    <div class="nav-wordmark-spacer" aria-hidden="true"></div>
+    <div class="nav-center">
+      <a href="/" class="nav-cta">← Back to home</a>
+    </div>
+    <div class="nav-right">
+      <span class="nav-user" id="navUser"></span>
+      <button class="nav-logout-btn" id="logoutBtn" title="Sign out">Sign Out</button>
+    </div>
+  </nav>
+
+  <main id="main-content" style="display:none;">
+
+    <!-- PAGE HEADER -->
+    <section class="products-hero">
+      <div class="products-hero-inner">
+        <h1 class="products-hero-title">The Collection</h1>
+        <p class="products-hero-sub">Curated products for relationship-based businesses. Clean, affordable, couples-friendly.</p>
+      </div>
+    </section>
+
+    <!-- FILTERS -->
+    <section class="products-filters" aria-label="Product category filters">
+      <div class="filters-inner">
+        <button class="filter-btn active" data-filter="all">All Products</button>
+        <button class="filter-btn" data-filter="starters">Sensual Starters</button>
+        <button class="filter-btn" data-filter="her">For Her</button>
+        <button class="filter-btn" data-filter="him">For Him</button>
+        <button class="filter-btn" data-filter="couples">Couples & Kink-Curious</button>
+        <button class="filter-btn" data-filter="bundles">Bundles</button>
+      </div>
+    </section>
+
+    <!-- PRODUCT GRID -->
+    <section class="products-grid-section">
+      <div class="products-grid" id="productsGrid">
+
+        <!-- ═══ SENSUAL STARTERS ═══ -->
+
+        <div class="product-card" data-category="starters">
+          <div class="product-badge">Best Seller</div>
+          <div class="product-image">
+            <img src="/images/products/icon-originals/01-candles.png" alt="Make Me Melt Sensual Candles" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">The 9's</p>
+            <h3 class="product-name">Make Me Melt Sensual Candles</h3>
+            <p class="product-desc">Warm-drip massage candles, 4-pack. Perfect party icebreaker.</p>
+            <p class="product-price">$14.99</p>
+            <p class="product-variants">Passion Tones</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="starters">
+          <div class="product-badge">Fan Favorite</div>
+          <div class="product-image">
+            <img src="/images/products/icon-originals/02-flirt-finger.png" alt="Flirt Finger Bunny Vibrator" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">The 9's</p>
+            <h3 class="product-name">Flirt Finger Bunny Vibrator</h3>
+            <p class="product-desc">Cute, small, approachable. Best entry-level vibe.</p>
+            <p class="product-price">$14.99</p>
+            <p class="product-variants">Pink · Purple</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="starters">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/03-pastels-rose.png" alt="Pastels Variable Speed Vibrator" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">The 9's</p>
+            <h3 class="product-name">Pastels Variable Speed Vibrator</h3>
+            <p class="product-desc">Beautiful colors, simple controls. Looks like a beauty product.</p>
+            <p class="product-price">$14.99</p>
+            <p class="product-variants">Rose · Lavender · Mint</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="starters">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/04-bshell-pink.png" alt="B-Shell Bullet and Controller" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">The 9's</p>
+            <h3 class="product-name">B-Shell Bullet & Controller</h3>
+            <p class="product-desc">Discreet shell design. Easy to explain at a party.</p>
+            <p class="product-price">$14.99</p>
+            <p class="product-variants">Purple · Pink</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="starters">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/05-foxy-gold.png" alt="Foxy Fox Tail Plug" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">Foxy</p>
+            <h3 class="product-name">Foxy Fox Tail Plug</h3>
+            <p class="product-desc">Instagram-aesthetic. Fun, playful, giftable.</p>
+            <p class="product-price">$29.95</p>
+            <p class="product-variants">Gold · Silver · Black · Pink · Purple</p>
+          </div>
+        </div>
+
+        <!-- ═══ FOR HER ═══ -->
+
+        <div class="product-card" data-category="her">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/06-vibro-finger.png" alt="Vibro Finger Phallic" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">The 9's</p>
+            <h3 class="product-name">Vibro Finger, Phallic</h3>
+            <p class="product-desc">Compact, discreet, affordable. Great upsell from the Flirt Finger.</p>
+            <p class="product-price">$14.99</p>
+            <p class="product-variants">Purple</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="her">
+          <div class="product-badge">Top Seller</div>
+          <div class="product-image">
+            <img src="/images/products/icon-originals/07-silver-starter-round-pink.png" alt="Silver Starter Round Jewel Plug" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">Silver Starters</p>
+            <h3 class="product-name">Silver Starter Round Jewel Plug</h3>
+            <p class="product-desc">The #1 aesthetic plug. Looks like jewelry.</p>
+            <p class="product-price">$14.99</p>
+            <p class="product-variants">Pink · Violet · Diamond</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="her">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/08-silver-starter-heart.png" alt="Silver Starter Heart Jewel Plug" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">Silver Starters</p>
+            <h3 class="product-name">Silver Starter Heart Jewel Plug</h3>
+            <p class="product-desc">Heart jewel version. Valentine's & bachelorette staple.</p>
+            <p class="product-price">$14.99</p>
+            <p class="product-variants">Pink · Violet · Diamond</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="her">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/09-diclets-pink.png" alt="Diclets 9 inch Suction Cup Dildo" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">The 9's</p>
+            <h3 class="product-name">Diclets 9" Suction Cup Dildo</h3>
+            <p class="product-desc">Affordable first dildo. Suction cup adds versatility.</p>
+            <p class="product-price">$14.99</p>
+            <p class="product-variants">Pink · Purple</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="her">
+          <div class="product-image">
+            <img src="/images/products/smokeshow-cottontails.png" alt="Cottontails Bunny Tail Plug" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">The 9's</p>
+            <h3 class="product-name">Cottontails Bunny Tail Plug</h3>
+            <p class="product-desc">Playful silicone plug. Great for themed parties.</p>
+            <p class="product-price">$14.99</p>
+            <p class="product-variants">Multiple colors</p>
+          </div>
+        </div>
+
+        <!-- ═══ FOR HIM ═══ -->
+
+        <div class="product-card" data-category="him">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/11-phat-rings.png" alt="Phat Rings Cock Ring" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">The 9's</p>
+            <h3 class="product-name">Phat Rings Cock Ring</h3>
+            <p class="product-desc">Simple, effective, low price point. Easy couples add-on.</p>
+            <p class="product-price">$14.99</p>
+            <p class="product-variants">Smoky Gray</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="him">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/12-base-boost.png" alt="Base Boost Cock and Ball Sheath" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">The 9's</p>
+            <h3 class="product-name">Base Boost Cock & Ball Sheath</h3>
+            <p class="product-desc">Enhancer + extension. Popular at parties.</p>
+            <p class="product-price">$14.99</p>
+            <p class="product-variants">Natural · Black</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="him">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/13-pzone.png" alt="P-Zone Plus Prostate Massager" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">The 9's</p>
+            <h3 class="product-name">P-Zone Plus Prostate Massager</h3>
+            <p class="product-desc">Intro-level prostate play. Approachable price.</p>
+            <p class="product-price">$14.99</p>
+            <p class="product-variants">Black</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="him">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/14-jack-it-frost-spirals.png" alt="Jack-It Frost Stroker Spirals" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">Jack-It</p>
+            <h3 class="product-name">Jack-It Frost Stroker — Spirals</h3>
+            <p class="product-desc">Textured, compact, discreet. Good mid-price male product.</p>
+            <p class="product-price">$24.99</p>
+            <p class="product-variants">Clear</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="him">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/15-jack-it-frost-curves.png" alt="Jack-It Frost Stroker Curves" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">Jack-It</p>
+            <h3 class="product-name">Jack-It Frost Stroker — Curves</h3>
+            <p class="product-desc">Variant texture. Sell alongside Spirals for options.</p>
+            <p class="product-price">$24.99</p>
+            <p class="product-variants">Clear</p>
+          </div>
+        </div>
+
+        <!-- ═══ COUPLES & KINK-CURIOUS ═══ -->
+
+        <div class="product-card" data-category="couples">
+          <div class="product-badge">Date Night</div>
+          <div class="product-image">
+            <img src="/images/products/icon-originals/16-oitnb-satin-sash.png" alt="Satin Sash Blindfold" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">Orange Is The New Black</p>
+            <h3 class="product-name">Satin Sash Blindfold</h3>
+            <p class="product-desc">Non-threatening kink intro. Perfect for date night.</p>
+            <p class="product-price">$14.99</p>
+            <p class="product-variants">Orange / Black</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="couples">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/17-oitnb-crop-tickler.png" alt="Crop and Tickler" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">Orange Is The New Black</p>
+            <h3 class="product-name">Crop & Tickler</h3>
+            <p class="product-desc">Dual-end: soft tickler + crop. Explore at your own pace.</p>
+            <p class="product-price">$14.99</p>
+            <p class="product-variants">Orange / Black</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="couples">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/18-oitnb-xoxo-paddle.png" alt="XOXO Slap Paddle" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">Orange Is The New Black</p>
+            <h3 class="product-name">XOXO Slap-Paddle</h3>
+            <p class="product-desc">Cute "XOXO" imprint. Fun, flirty, not intimidating.</p>
+            <p class="product-price">$14.99</p>
+            <p class="product-variants">Orange / Black</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="couples">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/19-oitnb-hearts-paddle.png" alt="Hearts Slap Paddle" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">Orange Is The New Black</p>
+            <h3 class="product-name">Hearts Slap-Paddle</h3>
+            <p class="product-desc">Heart imprint. Great Valentine's or bachelorette gift.</p>
+            <p class="product-price">$14.99</p>
+            <p class="product-variants">Orange / Black</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="couples">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/20-oitnb-short-leash.png" alt="Short Leash" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">Orange Is The New Black</p>
+            <h3 class="product-name">Short Leash</h3>
+            <p class="product-desc">For couples ready for the next step.</p>
+            <p class="product-price">$14.99</p>
+            <p class="product-variants">Orange / Black</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="couples">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/21-oitnb-see-no-evil.png" alt="See No Evil Speak No Evil Kit" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">Orange Is The New Black</p>
+            <h3 class="product-name">See No Evil, Speak No Evil Kit</h3>
+            <p class="product-desc">Blindfold + gag bundle. Great upgrade upsell.</p>
+            <p class="product-price">$34.95</p>
+            <p class="product-variants">Orange / Black</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="couples">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/22-oitnb-restrain-yourself.png" alt="Restrain Yourself Kit" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">Orange Is The New Black</p>
+            <h3 class="product-name">Restrain Yourself Kit</h3>
+            <p class="product-desc">Cuffs + restraint bundle. Power couple gift set.</p>
+            <p class="product-price">$34.95</p>
+            <p class="product-variants">Orange / Black</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="couples">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/23-oitnb-50-lashes.png" alt="50 Lashes Kit" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">Orange Is The New Black</p>
+            <h3 class="product-name">50 Lashes Kit</h3>
+            <p class="product-desc">Multi-piece kit. Premium bundle for the kink-curious.</p>
+            <p class="product-price">$34.95</p>
+            <p class="product-variants">Orange / Black</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="couples">
+          <div class="product-badge">Premium</div>
+          <div class="product-image">
+            <img src="/images/products/icon-originals/24-red-dot-v1.png" alt="Vibrating Cock Ring V1 with Remote" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">Red Dot</p>
+            <h3 class="product-name">Vibrating Cock Ring V1 w/ Remote</h3>
+            <p class="product-desc">Rechargeable, remote-controlled. Top-shelf couples item.</p>
+            <p class="product-price">$54.99</p>
+            <p class="product-variants">Black / Red</p>
+          </div>
+        </div>
+
+        <!-- ═══ BUNDLES & HIGHER-TICKET ═══ -->
+
+        <div class="product-card" data-category="bundles">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/25-oitnb-bone-gag.png" alt="Bone Gag" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">Orange Is The New Black</p>
+            <h3 class="product-name">Bone Gag</h3>
+            <p class="product-desc">Fun gag gift (literally). Party prize must-have.</p>
+            <p class="product-price">$14.95</p>
+            <p class="product-variants">Orange / Black</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="bundles">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/26-oitnb-heart-gag.png" alt="Heart Gag" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">Orange Is The New Black</p>
+            <h3 class="product-name">Heart Gag</h3>
+            <p class="product-desc">Cuter version. Pairs with paddle for a gift set.</p>
+            <p class="product-price">$14.95</p>
+            <p class="product-variants">Orange / Black</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="bundles">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/27-jack-it-smoke-v2.png" alt="Jack-It Stroker Smoke" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">Jack-It</p>
+            <h3 class="product-name">Jack-It Stroker — Smoke</h3>
+            <p class="product-desc">Premium feel, mid-price. Great "for him" gift option.</p>
+            <p class="product-price">$29.99</p>
+            <p class="product-variants">Smoke</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="bundles">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/28-jack-it-crimson.png" alt="Jack-It Stroker Crimson" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">Jack-It</p>
+            <h3 class="product-name">Jack-It Stroker — Crimson</h3>
+            <p class="product-desc">Color variant. Pair with candles for a couples bundle.</p>
+            <p class="product-price">$29.99</p>
+            <p class="product-variants">Crimson</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="bundles">
+          <div class="product-badge">Premium</div>
+          <div class="product-image">
+            <img src="/images/products/icon-originals/29-red-dot-v3.png" alt="Vibrating Cock Ring V3 with Remote" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">Red Dot</p>
+            <h3 class="product-name">Vibrating Cock Ring V3 w/ Remote</h3>
+            <p class="product-desc">Different shape from V1. Choice at the premium tier.</p>
+            <p class="product-price">$54.99</p>
+            <p class="product-variants">Black / Red</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="bundles">
+          <div class="product-image">
+            <img src="/images/products/icon-originals/30-triple-play.png" alt="Triple Play Cock Ring" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-line">The 9's</p>
+            <h3 class="product-name">Triple Play Cock Ring</h3>
+            <p class="product-desc">Multi-ring design. Strong seller when in stock.</p>
+            <p class="product-price">$14.99</p>
+            <p class="product-variants">Clear</p>
+          </div>
+        </div>
+
+      </div><!-- /products-grid -->
+
+      <!-- EMPTY STATE -->
+      <div class="products-empty" id="productsEmpty" hidden>
+        <p>No products in this category yet.</p>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="products-cta">
+      <div class="products-cta-inner">
+        <h2>Interested in carrying these products?</h2>
+        <p>playthings handles fulfillment, logistics, and product continuity — so you can focus on your customers.</p>
+        <a href="/#cta" class="hero-btn">Start a conversation</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo" class="site-footer" style="display:none;">
+    <div class="footer-inner">
+      <a href="/" class="footer-wordmark" aria-label="playthings home">playthings</a>
+      <p class="footer-tagline">A structure that stands behind you — not over you.</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <ul class="footer-links-list">
+          <li><a href="/#products">How it works</a></li>
+          <li><a href="/#cta">Start a conversation</a></li>
+        </ul>
+      </nav>
+      <div class="footer-meta">
+        <p class="footer-copy">&copy; 2026 playthings. All rights reserved.</p>
+        <a href="#" class="footer-back-top" aria-label="Back to top">Back to top</a>
+        <a href="/privacy" class="footer-privacy-link">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AUTH GUARD — checks login, shows page only if authenticated -->
+  <script type="module">
+    import { getSession, signOut } from '/scripts/auth.js';
+
+    const session = await getSession();
+    if (!session) {
+      window.location.href = '/login';
+    } else {
+      // Show user email in nav
+      const userEl = document.getElementById('navUser');
+      if (userEl && session.user) {
+        userEl.textContent = session.user.email;
+      }
+
+      // Show the page (it starts hidden)
+      document.getElementById('main-content').style.display = '';
+      document.querySelector('.site-footer').style.display = '';
+
+      // Logout
+      document.getElementById('logoutBtn').addEventListener('click', async () => {
+        await signOut();
+        window.location.href = '/login';
+      });
+    }
+  </script>
+
+  <!-- PRODUCT DETAIL MODAL -->
+  <div class="modal-overlay" id="productModal" aria-hidden="true" role="dialog" aria-labelledby="modalProductName">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-container">
+      <button class="modal-close" id="modalClose" aria-label="Close product details">&times;</button>
+      <div class="modal-body">
+        <div class="modal-image">
+          <img id="modalImg" src="" alt="">
+        </div>
+        <div class="modal-details">
+          <p class="modal-line" id="modalLine"></p>
+          <h2 class="modal-product-name" id="modalProductName"></h2>
+          <p class="modal-price" id="modalPrice"></p>
+          <p class="modal-variants-label" id="modalVariants"></p>
+          <div class="modal-divider"></div>
+          <p class="modal-desc" id="modalDesc"></p>
+          <div class="modal-features" id="modalFeatures"></div>
+          <div class="modal-specs" id="modalSpecs"></div>
+          <a href="/#cta" class="modal-cta" onclick="document.getElementById('productModal').classList.remove('active');document.body.style.overflow='';">Interested? Start a conversation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/scripts/main.js"></script>
+  <script>
+    // ── Product detail data ──
+    const productData = {
+      'Make Me Melt Sensual Candles': {
+        desc: 'Perfect for titillating BDSM fun, these wax-play candles have just a tinge of heat when dripped, and then quickly warm to the touch. Made with 100% paraffin, which is the preferred wax for drip-play. Available in beautifully erotic colors — black, blue, red and purple.',
+        features: ['Contains one each: Black, Purple, Blue and Red', 'Always 100% Paraffin', 'Moderate Melting Temperature', 'Perfect for Beginners and Advanced Alike'],
+        specs: { 'Materials': 'Paraffin', 'Product Size': '.75" x 6" each', 'Package Size': '3.5" W x 6.5" H x 1.25" D', 'Weight': '6 oz' }
+      },
+      'Flirt Finger Bunny Vibrator': {
+        desc: 'Tickle your fancy — or your lover\'s — with the Flirt Finger Bunny. Slip it over your finger and away you go, using the buzzing ears to tickle, tease and tantalize any erogenous zone. The silicone rabbit covers a powerful bullet vibrator with 1-touch control. Waterproof for tub or shower use.',
+        features: ['Powerful Vibrations', 'Waterproof', 'Perfect for solo or couples play', '1-Touch Control'],
+        specs: { 'Materials': 'Silicone', 'Product Size': '.75" x 4"', 'Package Size': '3" W x 5.65" H x 2" D', 'Weight': '2.3 oz' }
+      },
+      'Pastels Variable Speed Vibrator': {
+        desc: 'Beautiful pastel colors with simple variable-speed controls. Looks like a beauty product, not a sex toy — making it approachable and discreet. Perfect entry-level vibrator with a gorgeous aesthetic.',
+        features: ['Variable Speed Control', 'Beautiful Pastel Colors', 'Discreet Design', 'Beginner Friendly'],
+        specs: { 'Colors': 'Rose, Lavender, Mint', 'Materials': 'ABS Plastic', 'Attributes': 'Discreet, Travel-Friendly' }
+      },
+      'B-Shell Bullet & Controller': {
+        desc: 'The shell-shaped corded remote control helps deliver waves of pleasure as it powers the egg-shaped bullet through seven patterns of vibration and escalation. A single button makes it easy to find the pattern that\'s best for you. Bring a bit of the beach into your bedroom!',
+        features: ['Elegant Shell-Inspired Controller', 'Corded Remote Control', 'Beautiful Soft-Touch Bullet', 'Powerful Yet Discreet'],
+        specs: { 'Materials': 'Body-Safe TPR', 'Controller Size': '2.25" W', 'Bullet Size': '1" W x 2" L', 'Power Line': '24" L' }
+      },
+      'Foxy Fox Tail Plug': {
+        desc: 'A beautiful faux-fox tail in a luscious 18" length with a premium platinum silicone plug. Perfect for adding an extra kink to bedtime tales and ideal for the cosplay crowd. Soft, sensual, and in a gorgeous golden hue.',
+        features: ['Full 18" Length', 'Soft Shimmering Faux Fur', 'Premium Silicone Plug', 'Spot-cleans easily with mild soap'],
+        specs: { 'Materials': 'Faux Fur + Premium Platinum Silicone', 'Product Size': '1.25" D x 17.15" H', 'Package Size': '18.5" H x 6" W' }
+      },
+      'Vibro Finger, Phallic': {
+        desc: 'Compact and discreet phallic-shaped finger vibrator. Simply slip it on and enjoy targeted stimulation wherever you desire. A great step up from the Flirt Finger for those who want a little more.',
+        features: ['Compact Finger Design', 'Powerful Vibrations', 'Discreet & Travel-Friendly', 'Affordable Entry Point'],
+        specs: { 'Color': 'Purple', 'Materials': 'TPR, ABS' }
+      },
+      'Silver Starter Round Jewel Plug': {
+        desc: 'This elegant jeweled butt plug pairs a classic silver metal design with a wide, glimmering gem base. These beautiful, handmade gems are available in stunning colors. Pamper your pucker like a princess — perfect for beginners, ultra-hygienic, and easy to clean with soap and warm water.',
+        features: ['Sleek Chrome Metallic Body', 'Glitzy Round Bejeweled Base', 'Designed for Easy Insertion', 'Perfect for Beginners'],
+        specs: { 'Materials': 'Chrome and Glass Stone', 'Product Size': '1" W x 3" L', 'Package Size': '3" W x 4.75" H x 1.5" D', 'Weight': '2.5 oz' }
+      },
+      'Silver Starter Heart Jewel Plug': {
+        desc: 'The heart-shaped version of our best-selling Silver Starter. Same elegant silver metal design with a beautiful heart-shaped gem base. Handmade gems in stunning colors. The perfect Valentine\'s, anniversary, or bachelorette gift.',
+        features: ['Sleek Chrome Metallic Body', 'Glitzy Heart-Shaped Bejeweled Base', 'Designed for Easy Insertion', 'Perfect for Beginners'],
+        specs: { 'Materials': 'Chrome and Glass Stone', 'Product Size': '1" W x 3" L', 'Package Size': '3" W x 4.75" H x 1.5" D', 'Weight': '2.5 oz' }
+      },
+      'Diclets 9" Suction Cup Dildo': {
+        desc: 'An affordable first dildo with a strong suction cup base that adds hands-free versatility. Soft jelly TPR material for a realistic feel. Available in fun colors.',
+        features: ['Strong Suction Cup Base', 'Soft Jelly TPR Material', 'Hands-Free Versatility', 'Affordable Entry Point'],
+        specs: { 'Colors': 'Pink, Purple', 'Materials': 'Jelly TPR', 'Size': '9 inches' }
+      },
+      'Cottontails Bunny Tail Plug': {
+        desc: 'Playful silicone bunny tail plug — Instagram-ready and perfect for themed parties. Soft, fluffy cottontail attached to a smooth silicone plug designed for comfort.',
+        features: ['Soft Fluffy Cottontail', 'Silicone Plug', 'Playful & Photogenic', 'Great for Themed Events'],
+        specs: { 'Materials': 'Silicone + Faux Fur', 'Colors': 'Multiple' }
+      },
+      'Phat Rings Cock Ring': {
+        desc: 'Simple, effective, and affordable. A quality cock ring at a great price point. The smoky gray color is discreet and masculine. Easy addition for any couples experience.',
+        features: ['Comfortable Stretch Fit', 'Smoky Gray Color', 'Phthalate-Free', 'Great Couples Add-On'],
+        specs: { 'Color': 'Smoky Gray', 'Materials': 'TPR Phthalate-Free' }
+      },
+      'Base Boost Cock & Ball Sheath': {
+        desc: 'The best of both worlds — a cock ring and ball stretcher in one. Grips at the base for a stronger erection and tilts upward. Stretchy TPE material ensures a comfortable fit regardless of size.',
+        features: ['Phthalate-Free', 'Waterproof', 'Grips and Tightens Comfortably', 'Prolongs Erection; Delays and Intensifies Orgasms'],
+        specs: { 'Colors': 'Natural, Black', 'Materials': 'Body-safe Soft TPE', 'Product Size': '2.6" Stretchy — accommodates most sizes' }
+      },
+      'P-Zone Plus Prostate Massager': {
+        desc: 'An intro-level prostate massager at an approachable price point. Ergonomically curved for targeted stimulation. Growing demand category — great conversation starter for couples looking to explore.',
+        features: ['Ergonomic Curved Design', 'Body-Safe Material', 'Beginner Friendly', 'Affordable Entry Point'],
+        specs: { 'Color': 'Black', 'Materials': 'Body-Safe TPR' }
+      },
+      'Jack-It Frost Stroker — Spirals': {
+        desc: 'Textured, compact, and discreet. The spiral-pattern interior chamber provides incredible sensation. Ergonomically sized to fit your palm perfectly. Open on both sides for easy cleaning.',
+        features: ['Spiral-Textured Interior', 'Ergonomic Palm Design', 'Easy to Clean', 'Phthalate-Free TPR'],
+        specs: { 'Color': 'Clear/Frost', 'Materials': 'TPR Phthalate-Free' }
+      },
+      'Jack-It Frost Stroker — Curves': {
+        desc: 'The curves variant of the Jack-It Frost. Different interior texture pattern for those who want options. Same ergonomic design and easy-clean construction.',
+        features: ['Curve-Textured Interior', 'Ergonomic Palm Design', 'Easy to Clean', 'Phthalate-Free TPR'],
+        specs: { 'Color': 'Clear/Frost', 'Materials': 'TPR Phthalate-Free' }
+      },
+      'Satin Sash Blindfold': {
+        desc: 'Plunge your lover into sensual darkness with this luxuriously silky, fully reversible, fully opaque blindfold sash. At 58", it\'s plenty long to tie wrists or ankles for a truly erotic experience. Soft enough for shy beginners, yet sturdy enough to hold.',
+        features: ['Sensual Reversible Satin', 'Beautifully Handmade', 'Erotic Orange and Black Color', 'Perfect Kinky Beginner Fun'],
+        specs: { 'Materials': 'Satin', 'Product Size': '3.25" W x 58" L', 'Colors': 'Orange and Black' }
+      },
+      'Crop & Tickler': {
+        desc: 'Keep that sub in line with this orange-accented riding crop and feather tickler. At 16+ inches, with a perfectly tapered leatherette flogger on one end and a wonderfully sensual ostrich feather plume on the other. Whether it\'s pleasure or pain, this best-seller delivers.',
+        features: ['Pretty Orange Stitching', 'Sturdy Rod for a Swift Swat', 'Wonderfully Soft Feather Plume', 'Full-Size Flogger'],
+        specs: { 'Materials': 'Faux Leather, Ostrich Plume Feathers', 'Length': '16.5"', 'Colors': 'Orange and Black' }
+      },
+      'XOXO Slap-Paddle': {
+        desc: 'Leave your mark! This handmade leather paddle separates at the top for a double-smack sensation and erotic slap-sound. The "XOXO" message displays after a light spanking on the skin. Perfect for beginner kinky fun.',
+        features: ['Leather Paddle with XOXO Impression', 'Beautifully Handcrafted', 'Sexy Orange Stitching', 'Perfect Kinky Beginner Fun'],
+        specs: { 'Materials': 'Leatherette', 'Product Size': '2.25" W x 12.75" L x .25" D', 'Colors': 'Orange and Black' }
+      },
+      'Hearts Slap-Paddle': {
+        desc: 'Make your mark with heart shapes that lustfully display on the skin after a light spanking. This handmade leather paddle separates at the top for a light slap sensation and erotic smacking sound. Truly the queen of hearts!',
+        features: ['Leather Paddle with Heart Impression', 'Beautifully Handcrafted', 'Sexy Orange Stitching', 'Perfect Kinky Beginner Fun'],
+        specs: { 'Materials': 'Leatherette', 'Product Size': '2.25" W x 12.75" L x .25" D', 'Colors': 'Orange and Black' }
+      },
+      'Short Leash': {
+        desc: 'Keep \'em on a short leash! Pretty orange fur-lined leather collar with a sturdy leatherette band. Strong leash and heavy metal clips ensure secure fun. Adjustable buckle and detachable fastener.',
+        features: ['Pretty Orange Fur-Lined Leather', 'Sturdy Adjustable Leash', 'Strong Metal Clips', 'Adjustable Buckle and Detachable Fastener'],
+        specs: { 'Materials': 'Faux Leather, Faux Fur, Metal Fasteners', 'Collar': '20" Adjustable', 'Leash': '43" Adjustable' }
+      },
+      'See No Evil, Speak No Evil Kit': {
+        desc: 'Jump into sensory deprivation with this kit featuring a luxuriously soft velvet blindfold, seductive silicone ball gag, and wonderfully erotic cotton rope — each accented by kinky orange stitching.',
+        features: ['Velvet Blindfold', 'Silicone Ball Gag', '16\' Cotton Rope', 'Beautifully Handcrafted'],
+        specs: { 'Materials': 'Velvet, Silicone, Nylon', 'Blindfold': '7.75" Adjustable', 'Gag': '7.5" Adjustable', 'Rope': '16\' Long' }
+      },
+      'Restrain Yourself Kit': {
+        desc: 'Three of the most popular Orange Is the New Black pieces in a trio that will bind you in pleasure. Beautifully faux-fur-lined wrist and ankle cuffs paired with a furry neck-collar with leatherette leash.',
+        features: ['Faux-Fur-Lined Wrist Cuffs', 'Faux-Fur-Lined Ankle Cuffs', 'Collar and Leash Included', 'Beautifully Handcrafted'],
+        specs: { 'Materials': 'Faux Fur, Leatherette, Stainless Steel', 'Wrist Cuffs': '14" Adjustable', 'Ankle Cuffs': '14" Adjustable', 'Collar': '20" Adjustable' }
+      },
+      '50 Lashes Kit': {
+        desc: 'Ready to lash out? This kit features a fantastically crafted leatherette whip, sturdy leatherette paddle, and sensual nylon rope — all with fashion-forward orange stitching. Perfect for BDSM beginners and intermediates.',
+        features: ['Leatherette Whip', 'Leatherette Paddle', 'Nylon Rope', 'Beautifully Handcrafted'],
+        specs: { 'Materials': 'Leatherette and Nylon', 'Whip': '23.5" L', 'Paddle': '4" W x 7" L', 'Rope': '16\' L' }
+      },
+      'Vibrating Cock Ring V1 w/ Remote': {
+        desc: 'The ideal couples ring. Powerful vibrating bunny ears effortlessly find the right spot every time. A one-button remote allows you to cycle through ten different vibrational patterns and intensities. IPx7 water-resistant.',
+        features: ['Silky-Smooth Body-Safe Silicone', '10 Vibrational Patterns', 'Remote Controlled', 'IPx7 Water-Resistant', 'USB Rechargeable'],
+        specs: { 'Materials': 'Silicone', 'Weight': '0.16 lbs', 'Product Size': '5" L x 1.75" W x 2.5" H' }
+      },
+      'Bone Gag': {
+        desc: 'A super-cool silicone bone-gag. Made with waterproof leatherette and finished with proprietary orange stitching. Adjustable metal buckles for a snug fit every time. Non-porous and phthalate-free.',
+        features: ['Silicone Bone Shape', 'Waterproof Leatherette', 'Adjustable Metal Buckles', 'Phthalate-Free'],
+        specs: { 'Materials': 'Silicone, Leatherette', 'Length': '9.5"', 'Width': '3.75"' }
+      },
+      'Heart Gag': {
+        desc: 'Put your heart in your BDSM foreplay with this silicone heart-shaped mouth gag. Made with waterproof leatherette and finished with orange stitching. Adjustable metal buckles for a snug fit. Truly love at first bite.',
+        features: ['Silicone Heart Shape', 'Waterproof Leatherette', 'Adjustable Metal Buckles', 'Phthalate-Free'],
+        specs: { 'Materials': 'Silicone, Leatherette', 'Length': '6"', 'Width': '4.25"' }
+      },
+      'Jack-It Stroker — Smoke': {
+        desc: 'Soft and tight, with a perfectly ridged chamber for excellent sensation. Ergonomically sized to fit your palm perfectly. Clear, dimpled, jelly-like texture provides a flawless grip. Open on both sides for easy cleaning.',
+        features: ['Perfectly-Ridged Chamber', 'Smooth Tight Opening', 'Ergonomic Palm Design', 'Easy to Clean'],
+        specs: { 'Color': 'Smoke', 'Materials': 'TPR Phthalate-Free', 'Product Size': '2.25" W x 5" H', 'Weight': '8.1 oz' }
+      },
+      'Jack-It Stroker — Crimson': {
+        desc: 'Soft and tight, with a perfectly ridged chamber for excellent sensation. Ergonomically sized to fit your palm perfectly. Clear, dimpled, jelly-like texture provides a flawless grip. Open on both sides for easy cleaning.',
+        features: ['Perfectly-Ridged Chamber', 'Smooth Tight Opening', 'Ergonomic Palm Design', 'Easy to Clean'],
+        specs: { 'Color': 'Crimson', 'Materials': 'TPR Phthalate-Free', 'Product Size': '2.25" W x 5" H', 'Weight': '8.1 oz' }
+      },
+      'Vibrating Cock Ring V3 w/ Remote': {
+        desc: 'Stimulation in sensurround! The V3 hugs your balls while it vibrates your erection and everything around it. Ten unique vibrational speeds and patterns at the palm of your hand. IPx7 water-resistant.',
+        features: ['Silky-Smooth Body-Safe Silicone', '10 Vibrational Patterns', 'Remote Controlled', 'IPx7 Water-Resistant', 'USB Rechargeable'],
+        specs: { 'Materials': 'Silicone', 'Weight': '0.18 lbs', 'Product Size': '3.75" L x 2.5" W x 2.5" H' }
+      },
+      'Triple Play Cock Ring': {
+        desc: 'Multi-ring design that provides enhanced stimulation and a stronger, longer-lasting erection. Simple, effective, and a strong seller. Stretchy material accommodates most sizes.',
+        features: ['Multi-Ring Design', 'Stretchy Comfortable Fit', 'Enhanced Stimulation', 'Great Value'],
+        specs: { 'Color': 'Clear', 'Materials': 'TPR' }
+      }
+    };
+
+    // ── Modal logic ──
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('productModal');
+      const modalImg = document.getElementById('modalImg');
+      const modalLine = document.getElementById('modalLine');
+      const modalName = document.getElementById('modalProductName');
+      const modalPrice = document.getElementById('modalPrice');
+      const modalVariants = document.getElementById('modalVariants');
+      const modalDesc = document.getElementById('modalDesc');
+      const modalFeatures = document.getElementById('modalFeatures');
+      const modalSpecs = document.getElementById('modalSpecs');
+      const modalClose = document.getElementById('modalClose');
+      const modalBackdrop = document.getElementById('modalBackdrop');
+
+      // Open modal on card click
+      document.querySelectorAll('.product-card').forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => {
+          const img = card.querySelector('.product-image img');
+          const name = card.querySelector('.product-name').textContent;
+          const line = card.querySelector('.product-line').textContent;
+          const price = card.querySelector('.product-price').textContent;
+          const variants = card.querySelector('.product-variants').textContent;
+
+          // Set basic info
+          modalImg.src = img ? img.src : '';
+          modalImg.alt = name;
+          modalLine.textContent = line;
+          modalName.textContent = name;
+          modalPrice.textContent = price;
+          modalVariants.textContent = variants;
+
+          // Set detailed info from product data
+          const data = productData[name];
+          if (data) {
+            modalDesc.textContent = data.desc;
+
+            // Features
+            if (data.features && data.features.length) {
+              modalFeatures.innerHTML = '<h4>Features</h4><ul>' +
+                data.features.map(f => '<li>' + f + '</li>').join('') + '</ul>';
+            } else {
+              modalFeatures.innerHTML = '';
+            }
+
+            // Specs
+            if (data.specs) {
+              const specRows = Object.entries(data.specs)
+                .map(([k, v]) => '<tr><td>' + k + '</td><td>' + v + '</td></tr>').join('');
+              modalSpecs.innerHTML = '<h4>Specifications</h4><table>' + specRows + '</table>';
+            } else {
+              modalSpecs.innerHTML = '';
+            }
+          } else {
+            modalDesc.textContent = card.querySelector('.product-desc').textContent;
+            modalFeatures.innerHTML = '';
+            modalSpecs.innerHTML = '';
+          }
+
+          // Show modal
+          modal.classList.add('active');
+          modal.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+
+          // Scroll modal to top
+          modal.querySelector('.modal-container').scrollTop = 0;
+        });
+      });
+
+      // Close modal
+      function closeModal() {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      modalClose.addEventListener('click', closeModal);
+      modalBackdrop.addEventListener('click', closeModal);
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+      });
+
+      // ── Category filtering ──
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.product-card');
+      const emptyState = document.getElementById('productsEmpty');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const filter = btn.dataset.filter;
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          let visibleCount = 0;
+          cards.forEach(card => {
+            const match = filter === 'all' || card.dataset.category === filter;
+            card.style.display = match ? '' : 'none';
+            if (match) visibleCount++;
+          });
+          emptyState.hidden = visibleCount > 0;
+        });
+      });
+    });
+  </script>
+</body>
+</html>

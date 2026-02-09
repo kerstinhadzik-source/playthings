@@ -1,0 +1,220 @@
+/* ══════════════════════════════════════════════════════════════
+   playthings — Login Page Stylesheet
+   ══════════════════════════════════════════════════════════════ */
+
+.login-body {
+  background: var(--dark-charcoal);
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-page {
+  width: 100%;
+  max-width: 420px;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+/* ── Card ── */
+.login-card {
+  width: 100%;
+  background: #fff;
+  border-radius: 16px;
+  padding: var(--space-xl) var(--space-lg);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.login-wordmark {
+  display: block;
+  font-family: var(--font);
+  font-size: 1.85rem;
+  font-weight: 400;
+  color: var(--warm-taupe);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.login-wordmark:hover {
+  opacity: 0.8;
+}
+
+.login-subtitle {
+  font-family: var(--font);
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--charcoal-gray);
+  opacity: 0.5;
+  margin-bottom: var(--space-lg);
+}
+
+/* ── Form ── */
+.login-form {
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: var(--space-md);
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--font);
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--charcoal-gray);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.02em;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--charcoal-gray);
+  background: var(--soft-cream);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: var(--warm-taupe);
+  box-shadow: 0 0 0 3px rgba(154, 139, 128, 0.15);
+}
+
+.form-group input::placeholder {
+  color: var(--charcoal-gray);
+  opacity: 0.35;
+}
+
+/* ── Message ── */
+.login-message {
+  font-family: var(--font);
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.5;
+  min-height: 1.5em;
+  margin-bottom: var(--space-sm);
+  border-radius: 8px;
+  padding: 0;
+  transition: all 0.2s;
+}
+
+.login-message:empty {
+  display: none;
+}
+
+.login-message.error {
+  color: var(--error, #c45a5a);
+  background: rgba(196, 90, 90, 0.08);
+  padding: 0.6rem 0.8rem;
+}
+
+.login-message.success {
+  color: var(--success, #5a9a7a);
+  background: rgba(90, 154, 122, 0.08);
+  padding: 0.6rem 0.8rem;
+}
+
+/* ── Button ── */
+.login-btn {
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #fff;
+  background: var(--warm-taupe);
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+  min-height: 48px;
+}
+
+.login-btn:hover {
+  background: var(--warm-taupe-hover, #ab9d92);
+}
+
+.login-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── Links ── */
+.login-links {
+  margin-top: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.login-link-btn {
+  background: none;
+  border: none;
+  font-family: var(--font);
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--warm-taupe);
+  cursor: pointer;
+  padding: 0.25rem;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.login-link-btn:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+.login-divider {
+  color: var(--charcoal-gray);
+  opacity: 0.3;
+  font-size: 0.8rem;
+}
+
+.forgot-instructions {
+  font-family: var(--font);
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: var(--charcoal-gray);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+  text-align: center;
+}
+
+/* ── Footer ── */
+.login-footer {
+  font-family: var(--font);
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.04em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .login-page {
+    padding: var(--space-md);
+  }
+
+  .login-card {
+    padding: var(--space-lg) var(--space-md);
+    border-radius: 12px;
+  }
+}

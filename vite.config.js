@@ -6,10 +6,14 @@ export default defineConfig({
   publicDir: 'public',
   build: {
     outDir: 'dist',
+    target: 'esnext',
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        privacy: resolve(__dirname, 'privacy.html')
+        privacy: resolve(__dirname, 'privacy.html'),
+        products: resolve(__dirname, 'products.html'),
+        login: resolve(__dirname, 'login.html'),
+        crm: resolve(__dirname, 'crm.html')
       }
     }
   },

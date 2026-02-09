@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="playthings — Rep Login">
+  <meta name="theme-color" content="#42423f">
+
+  <title>playthings — Login</title>
+
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/login.css">
+</head>
+<body class="login-body">
+
+  <main class="login-page">
+    <div class="login-card">
+      <a href="/" class="login-wordmark">playthings</a>
+      <p class="login-subtitle">Rep Portal</p>
+
+      <!-- LOGIN FORM -->
+      <form id="loginForm" class="login-form" novalidate>
+        <div class="form-group">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" name="email" required autocomplete="email" placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" name="password" required autocomplete="current-password" placeholder="Your password">
+        </div>
+        <div id="loginMessage" class="login-message" role="status" aria-live="polite"></div>
+        <button type="submit" id="loginSubmit" class="login-btn">Sign In</button>
+      </form>
+
+      <div class="login-links">
+        <button type="button" id="forgotPasswordBtn" class="login-link-btn">Forgot password?</button>
+        <span class="login-divider">·</span>
+        <button type="button" id="toggleSignUp" class="login-link-btn">Create account</button>
+      </div>
+
+      <!-- SIGN UP FORM (hidden by default) -->
+      <form id="signUpForm" class="login-form" style="display:none;" novalidate>
+        <div class="form-group">
+          <label for="signUpEmail">Email</label>
+          <input type="email" id="signUpEmail" name="email" required autocomplete="email" placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label for="signUpPassword">Password</label>
+          <input type="password" id="signUpPassword" name="password" required autocomplete="new-password" placeholder="Create a password (min 6 characters)">
+        </div>
+        <div class="form-group">
+          <label for="signUpPasswordConfirm">Confirm Password</label>
+          <input type="password" id="signUpPasswordConfirm" name="password_confirm" required autocomplete="new-password" placeholder="Confirm your password">
+        </div>
+        <div id="signUpMessage" class="login-message" role="status" aria-live="polite"></div>
+        <button type="submit" id="signUpSubmit" class="login-btn">Create Account</button>
+      </form>
+
+      <div id="signUpLinks" class="login-links" style="display:none;">
+        <button type="button" id="toggleLogin" class="login-link-btn">← Back to sign in</button>
+      </div>
+
+      <!-- FORGOT PASSWORD FORM (hidden by default) -->
+      <form id="forgotForm" class="login-form" style="display:none;" novalidate>
+        <p class="forgot-instructions">Enter your email and we'll send you a reset link.</p>
+        <div class="form-group">
+          <label for="forgotEmail">Email</label>
+          <input type="email" id="forgotEmail" name="email" required autocomplete="email" placeholder="you@example.com">
+        </div>
+        <div id="forgotMessage" class="login-message" role="status" aria-live="polite"></div>
+        <button type="submit" id="forgotSubmit" class="login-btn">Send Reset Link</button>
+      </form>
+
+      <div id="forgotLinks" class="login-links" style="display:none;">
+        <button type="button" id="backToLogin" class="login-link-btn">← Back to sign in</button>
+      </div>
+    </div>
+
+    <p class="login-footer">&copy; 2026 playthings. All rights reserved.</p>
+  </main>
+
+  <script type="module">
+    import { signIn, signUp, resetPassword, getSession } from '/scripts/auth.js';
+
+    // If already logged in, redirect to products
+    getSession().then(session => {
+      if (session) window.location.href = '/products';
+    });
+
+    // ── Elements ──
+    const loginForm = document.getElementById('loginForm');
+    const signUpForm = document.getElementById('signUpForm');
+    const forgotForm = document.getElementById('forgotForm');
+    const loginLinks = document.querySelector('.login-links');
+    const signUpLinks = document.getElementById('signUpLinks');
+    const forgotLinks = document.getElementById('forgotLinks');
+
+    // ── Toggle forms ──
+    function showForm(formToShow) {
+      [loginForm, signUpForm, forgotForm].forEach(f => f.style.display = 'none');
+      [loginLinks, signUpLinks, forgotLinks].forEach(l => l.style.display = 'none');
+
+      if (formToShow === 'login') {
+        loginForm.style.display = '';
+        loginLinks.style.display = '';
+      } else if (formToShow === 'signup') {
+        signUpForm.style.display = '';
+        signUpLinks.style.display = '';
+      } else if (formToShow === 'forgot') {
+        forgotForm.style.display = '';
+        forgotLinks.style.display = '';
+      }
+    }
+
+    document.getElementById('toggleSignUp').addEventListener('click', () => showForm('signup'));
+    document.getElementById('toggleLogin').addEventListener('click', () => showForm('login'));
+    document.getElementById('forgotPasswordBtn').addEventListener('click', () => showForm('forgot'));
+    document.getElementById('backToLogin').addEventListener('click', () => showForm('login'));
+
+    // ── Helpers ──
+    function showMessage(el, msg, type) {
+      el.textContent = msg;
+      el.className = 'login-message ' + type;
+    }
+
+    function setLoading(btn, loading) {
+      btn.disabled = loading;
+      btn.textContent = loading ? 'Please wait...' : btn.dataset.originalText || btn.textContent;
+      if (!btn.dataset.originalText) btn.dataset.originalText = btn.textContent;
+    }
+
+    // ── Login ──
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value.trim();
+      const password = document.getElementById('loginPassword').value;
+      const msg = document.getElementById('loginMessage');
+      const btn = document.getElementById('loginSubmit');
+
+      if (!email || !password) {
+        showMessage(msg, 'Please enter email and password.', 'error');
+        return;
+      }
+
+      setLoading(btn, true);
+      try {
+        await signIn(email, password);
+        showMessage(msg, 'Success! Redirecting...', 'success');
+        setTimeout(() => { window.location.href = '/products'; }, 500);
+      } catch (err) {
+        showMessage(msg, err.message || 'Invalid email or password.', 'error');
+        setLoading(btn, false);
+      }
+    });
+
+    // ── Sign Up ──
+    signUpForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('signUpEmail').value.trim();
+      const password = document.getElementById('signUpPassword').value;
+      const confirm = document.getElementById('signUpPasswordConfirm').value;
+      const msg = document.getElementById('signUpMessage');
+      const btn = document.getElementById('signUpSubmit');
+
+      if (!email || !password) {
+        showMessage(msg, 'Please fill in all fields.', 'error');
+        return;
+      }
+
+      if (password.length < 6) {
+        showMessage(msg, 'Password must be at least 6 characters.', 'error');
+        return;
+      }
+
+      if (password !== confirm) {
+        showMessage(msg, 'Passwords do not match.', 'error');
+        return;
+      }
+
+      setLoading(btn, true);
+      try {
+        const data = await signUp(email, password);
+        if (data.user && !data.session) {
+          showMessage(msg, 'Check your email to confirm your account, then sign in.', 'success');
+        } else {
+          showMessage(msg, 'Account created! Redirecting...', 'success');
+          setTimeout(() => { window.location.href = '/products'; }, 500);
+        }
+      } catch (err) {
+        showMessage(msg, err.message || 'Could not create account.', 'error');
+      } finally {
+        setLoading(btn, false);
+      }
+    });
+
+    // ── Forgot Password ──
+    forgotForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('forgotEmail').value.trim();
+      const msg = document.getElementById('forgotMessage');
+      const btn = document.getElementById('forgotSubmit');
+
+      if (!email) {
+        showMessage(msg, 'Please enter your email.', 'error');
+        return;
+      }
+
+      setLoading(btn, true);
+      try {
+        await resetPassword(email);
+        showMessage(msg, 'Reset link sent! Check your email.', 'success');
+      } catch (err) {
+        showMessage(msg, err.message || 'Could not send reset link.', 'error');
+      } finally {
+        setLoading(btn, false);
+      }
+    });
+  </script>
+</body>
+</html>

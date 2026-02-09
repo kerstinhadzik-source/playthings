@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smoke Show CRM — Pipeline &amp; Marketing</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/crm.css">
+</head>
+<body>
+
+  <!-- ═══ SIDEBAR ═══ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <img class="sidebar-mark" src="/images/smokeshow-silhouette.png" alt="" aria-hidden="true">
+      <span class="sidebar-logo">SMOKE<br>SHOW</span>
+      <span class="sidebar-badge">CRM</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <button class="nav-item active" data-view="dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        Dashboard
+      </button>
+      <button class="nav-item" data-view="contacts">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Contacts
+      </button>
+      <button class="nav-item" data-view="pipeline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        Pipeline
+      </button>
+      <button class="nav-item" data-view="marketing">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Marketing
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="/smokeshow.html" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        View Live Site
+      </a>
+    </div>
+  </aside>
+
+  <!-- ═══ MOBILE HEADER ═══ -->
+  <header class="mobile-header">
+    <button class="hamburger" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <span class="mobile-brand">SMOKE SHOW <span class="mobile-badge">CRM</span></span>
+  </header>
+
+  <!-- ═══ MAIN CONTENT ═══ -->
+  <main class="main-content" id="mainContent">
+
+    <!-- ─── DASHBOARD VIEW ─── -->
+    <section class="view active" id="view-dashboard">
+      <div class="view-header">
+        <h1 class="view-title">Dashboard</h1>
+        <p class="view-subtitle">Smoke Show pipeline overview</p>
+      </div>
+
+      <div class="stats-row" id="dashStats">
+        <div class="stat-card">
+          <div class="stat-label">Total Contacts</div>
+          <div class="stat-value" id="statTotal">0</div>
+        </div>
+        <div class="stat-card stat-card--pink">
+          <div class="stat-label">Active Subscribers</div>
+          <div class="stat-value" id="statActive">0</div>
+        </div>
+        <div class="stat-card stat-card--green">
+          <div class="stat-label">Pipeline Value</div>
+          <div class="stat-value" id="statPipeline">$0</div>
+        </div>
+        <div class="stat-card stat-card--orange">
+          <div class="stat-label">Follow-ups Due</div>
+          <div class="stat-value" id="statFollowups">0</div>
+        </div>
+      </div>
+
+      <div class="dashboard-grid">
+        <div class="dash-card">
+          <h3 class="dash-card__title">Pipeline Breakdown</h3>
+          <div class="pipeline-bars" id="pipelineBars"></div>
+        </div>
+        <div class="dash-card">
+          <h3 class="dash-card__title">Recent Activity</h3>
+          <div class="activity-feed" id="activityFeed">
+            <p class="empty-state">No activity yet. Add your first contact to get started.</p>
+          </div>
+        </div>
+        <div class="dash-card dash-card--wide">
+          <h3 class="dash-card__title">Upcoming Follow-ups</h3>
+          <div class="followup-list" id="followupList">
+            <p class="empty-state">No follow-ups scheduled.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CONTACTS VIEW ─── -->
+    <section class="view" id="view-contacts">
+      <div class="view-header">
+        <div>
+          <h1 class="view-title">Contacts</h1>
+          <p class="view-subtitle" id="contactCount">0 contacts</p>
+        </div>
+        <div class="view-actions">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="contactSearch" placeholder="Search shops, names, cities...">
+          </div>
+          <select class="filter-select" id="stageFilter">
+            <option value="">All Stages</option>
+            <option value="lead">Lead</option>
+            <option value="contacted">Contacted</option>
+            <option value="demo">Demo Scheduled</option>
+            <option value="trial">Trial</option>
+            <option value="active">Active Subscriber</option>
+            <option value="churned">Churned</option>
+          </select>
+          <button class="btn btn--primary" id="addContactBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Contact
+          </button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="contacts-table" id="contactsTable">
+          <thead>
+            <tr>
+              <th class="sortable" data-sort="shopName">Shop Name</th>
+              <th class="sortable" data-sort="contactName">Contact</th>
+              <th>City</th>
+              <th class="sortable" data-sort="stage">Stage</th>
+              <th>Tier</th>
+              <th class="sortable" data-sort="lastContact">Last Contact</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="contactsBody">
+          </tbody>
+        </table>
+        <div class="empty-table" id="emptyContacts">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <p>No contacts yet</p>
+          <button class="btn btn--outline" id="addFirstContact">Add Your First Contact</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PIPELINE VIEW ─── -->
+    <section class="view" id="view-pipeline">
+      <div class="view-header">
+        <h1 class="view-title">Pipeline</h1>
+        <p class="view-subtitle">Drag contacts through your sales funnel</p>
+      </div>
+
+      <div class="pipeline-board" id="pipelineBoard">
+        <div class="pipeline-column" data-stage="lead">
+          <div class="pipeline-col-header">
+            <span class="stage-dot stage-dot--lead"></span>
+            <h3>Lead</h3>
+            <span class="stage-count" data-stage-count="lead">0</span>
+          </div>
+          <div class="pipeline-cards" data-stage-cards="lead"></div>
+        </div>
+        <div class="pipeline-column" data-stage="contacted">
+          <div class="pipeline-col-header">
+            <span class="stage-dot stage-dot--contacted"></span>
+            <h3>Contacted</h3>
+            <span class="stage-count" data-stage-count="contacted">0</span>
+          </div>
+          <div class="pipeline-cards" data-stage-cards="contacted"></div>
+        </div>
+        <div class="pipeline-column" data-stage="demo">
+          <div class="pipeline-col-header">
+            <span class="stage-dot stage-dot--demo"></span>
+            <h3>Demo</h3>
+            <span class="stage-count" data-stage-count="demo">0</span>
+          </div>
+          <div class="pipeline-cards" data-stage-cards="demo"></div>
+        </div>
+        <div class="pipeline-column" data-stage="trial">
+          <div class="pipeline-col-header">
+            <span class="stage-dot stage-dot--trial"></span>
+            <h3>Trial</h3>
+            <span class="stage-count" data-stage-count="trial">0</span>
+          </div>
+          <div class="pipeline-cards" data-stage-cards="trial"></div>
+        </div>
+        <div class="pipeline-column" data-stage="active">
+          <div class="pipeline-col-header">
+            <span class="stage-dot stage-dot--active"></span>
+            <h3>Active</h3>
+            <span class="stage-count" data-stage-count="active">0</span>
+          </div>
+          <div class="pipeline-cards" data-stage-cards="active"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── MARKETING VIEW ─── -->
+    <section class="view" id="view-marketing">
+      <div class="view-header">
+        <h1 class="view-title">Marketing</h1>
+        <p class="view-subtitle">Templates and outreach tools</p>
+      </div>
+
+      <div class="marketing-grid">
+        <div class="template-card" data-template="cold-intro">
+          <div class="template-header">
+            <span class="template-icon">📧</span>
+            <div>
+              <h3>Cold Intro Email</h3>
+              <p class="template-stage">Stage: Lead</p>
+            </div>
+          </div>
+          <div class="template-preview">
+            Hi [NAME], I noticed [SHOP] and think your customers would love our new product line...
+          </div>
+          <div class="template-actions">
+            <button class="btn btn--sm btn--outline" data-action="copy-template">Copy</button>
+            <button class="btn btn--sm btn--primary" data-action="use-template">Use Template</button>
+          </div>
+        </div>
+
+        <div class="template-card" data-template="follow-up">
+          <div class="template-header">
+            <span class="template-icon">🔄</span>
+            <div>
+              <h3>Follow-Up</h3>
+              <p class="template-stage">Stage: Contacted</p>
+            </div>
+          </div>
+          <div class="template-preview">
+            Hey [NAME], just circling back on Smoke Show. Our shops are seeing 50%+ margins on every unit...
+          </div>
+          <div class="template-actions">
+            <button class="btn btn--sm btn--outline" data-action="copy-template">Copy</button>
+            <button class="btn btn--sm btn--primary" data-action="use-template">Use Template</button>
+          </div>
+        </div>
+
+        <div class="template-card" data-template="demo-invite">
+          <div class="template-header">
+            <span class="template-icon">📅</span>
+            <div>
+              <h3>Demo / Meeting Invite</h3>
+              <p class="template-stage">Stage: Demo</p>
+            </div>
+          </div>
+          <div class="template-preview">
+            [NAME], I'd love to show you the Smoke Show display in action. Can we set up a quick 10-min call this week?
+          </div>
+          <div class="template-actions">
+            <button class="btn btn--sm btn--outline" data-action="copy-template">Copy</button>
+            <button class="btn btn--sm btn--primary" data-action="use-template">Use Template</button>
+          </div>
+        </div>
+
+        <div class="template-card" data-template="trial-offer">
+          <div class="template-header">
+            <span class="template-icon">🎁</span>
+            <div>
+              <h3>Trial Offer</h3>
+              <p class="template-stage">Stage: Trial</p>
+            </div>
+          </div>
+          <div class="template-preview">
+            [NAME], ready to try Smoke Show risk-free? We'll ship a FREE display case pre-loaded with product. Cancel anytime...
+          </div>
+          <div class="template-actions">
+            <button class="btn btn--sm btn--outline" data-action="copy-template">Copy</button>
+            <button class="btn btn--sm btn--primary" data-action="use-template">Use Template</button>
+          </div>
+        </div>
+
+        <div class="template-card" data-template="trade-show">
+          <div class="template-header">
+            <span class="template-icon">🎪</span>
+            <div>
+              <h3>Trade Show Follow-Up</h3>
+              <p class="template-stage">Stage: Lead</p>
+            </div>
+          </div>
+          <div class="template-preview">
+            Great meeting you at [EVENT]! As we discussed, Smoke Show is a zero-risk way to add a new revenue stream...
+          </div>
+          <div class="template-actions">
+            <button class="btn btn--sm btn--outline" data-action="copy-template">Copy</button>
+            <button class="btn btn--sm btn--primary" data-action="use-template">Use Template</button>
+          </div>
+        </div>
+
+        <div class="template-card" data-template="reactivation">
+          <div class="template-header">
+            <span class="template-icon">💡</span>
+            <div>
+              <h3>Reactivation</h3>
+              <p class="template-stage">Stage: Churned</p>
+            </div>
+          </div>
+          <div class="template-preview">
+            Hey [NAME], we've added some hot new products to the Smoke Show lineup and I thought of [SHOP]...
+          </div>
+          <div class="template-actions">
+            <button class="btn btn--sm btn--outline" data-action="copy-template">Copy</button>
+            <button class="btn btn--sm btn--primary" data-action="use-template">Use Template</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="marketing-section">
+        <h2 class="marketing-section__title">Quick Text Messages</h2>
+        <div class="marketing-grid">
+          <div class="template-card template-card--sms" data-template="sms-intro">
+            <div class="template-header">
+              <span class="template-icon">💬</span>
+              <div>
+                <h3>SMS Intro</h3>
+                <p class="template-stage">Cold Outreach</p>
+              </div>
+            </div>
+            <div class="template-preview">
+              Hey [NAME]! This is [YOUR NAME] from Smoke Show. We help smoke shops add a new revenue category with zero risk — free display, 50%+ margins. Got 2 min to chat?
+            </div>
+            <div class="template-actions">
+              <button class="btn btn--sm btn--outline" data-action="copy-template">Copy</button>
+            </div>
+          </div>
+
+          <div class="template-card template-card--sms" data-template="sms-followup">
+            <div class="template-header">
+              <span class="template-icon">💬</span>
+              <div>
+                <h3>SMS Follow-Up</h3>
+                <p class="template-stage">Warm Lead</p>
+              </div>
+            </div>
+            <div class="template-preview">
+              Hey [NAME], circling back on Smoke Show for [SHOP]. Our starter tier is $199/mo and shops are clearing $125+ profit. Want me to send over the details?
+            </div>
+            <div class="template-actions">
+              <button class="btn btn--sm btn--outline" data-action="copy-template">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ CONTACT MODAL ═══ -->
+  <div class="modal" id="contactModal" aria-hidden="true">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title" id="modalTitle">Add Contact</h2>
+        <button class="modal__close" id="modalClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <form class="modal__form" id="contactForm">
+        <input type="hidden" id="contactId">
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="shopName">Shop Name *</label>
+            <input type="text" id="shopName" required placeholder="e.g. Cloud 9 Smoke Shop">
+          </div>
+          <div class="form-group">
+            <label for="contactName">Contact Name *</label>
+            <input type="text" id="contactName" required placeholder="e.g. Mike Johnson">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="mike@cloud9smoke.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" placeholder="(555) 123-4567">
+          </div>
+          <div class="form-group">
+            <label for="city">City / State</label>
+            <input type="text" id="city" placeholder="e.g. Austin, TX">
+          </div>
+          <div class="form-group">
+            <label for="source">Source</label>
+            <select id="source">
+              <option value="website">Website Signup</option>
+              <option value="trade-show">Trade Show</option>
+              <option value="referral">Referral</option>
+              <option value="cold-outreach">Cold Outreach</option>
+              <option value="social">Social Media</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="stage">Pipeline Stage</label>
+            <select id="stage">
+              <option value="lead">Lead</option>
+              <option value="contacted">Contacted</option>
+              <option value="demo">Demo Scheduled</option>
+              <option value="trial">Trial</option>
+              <option value="active">Active Subscriber</option>
+              <option value="churned">Churned</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="tier">Interested Tier</label>
+            <select id="tier">
+              <option value="">Not specified</option>
+              <option value="starter">Starter ($199/mo)</option>
+              <option value="standard">Standard ($349/mo)</option>
+              <option value="premium">Premium ($499/mo)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="followup">Next Follow-up</label>
+            <input type="date" id="followup">
+          </div>
+          <div class="form-group form-group--full">
+            <label for="notes">Notes</label>
+            <textarea id="notes" rows="3" placeholder="Add notes about this contact..."></textarea>
+          </div>
+        </div>
+
+        <div class="modal__footer">
+          <button type="button" class="btn btn--ghost" id="deleteContact" style="display:none;">Delete</button>
+          <div class="modal__footer-right">
+            <button type="button" class="btn btn--outline" id="cancelBtn">Cancel</button>
+            <button type="submit" class="btn btn--primary" id="saveBtn">Save Contact</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Notes History (shown when editing) -->
+      <div class="notes-history" id="notesHistory" style="display:none;">
+        <h3 class="notes-history__title">Activity Log</h3>
+        <div class="notes-list" id="notesList"></div>
+        <div class="add-note">
+          <input type="text" id="newNote" placeholder="Add a note...">
+          <button type="button" class="btn btn--sm btn--primary" id="addNoteBtn">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ TOAST ═══ -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script type="module" src="/scripts/crm.js"></script>
+</body>
+</html>

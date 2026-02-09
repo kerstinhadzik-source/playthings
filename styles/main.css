@@ -450,9 +450,10 @@ nav .nav-wordmark-spacer {
 
 .hero-actions {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: var(--space-sm);
-  align-items: flex-start;
+  align-items: center;
+  margin-bottom: var(--space-sm);
 }
 
 .hero-btn {
@@ -472,6 +473,33 @@ nav .nav-wordmark-spacer {
   background: var(--warm-taupe-hover);
   color: #fff;
   transform: translateY(-2px);
+}
+
+.hero-video-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.85rem 1.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+  min-height: 44px;
+}
+
+.hero-video-btn:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hero-video-btn svg {
+  flex-shrink: 0;
 }
 
 .hero-small {
