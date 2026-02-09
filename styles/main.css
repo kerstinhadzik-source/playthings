@@ -289,29 +289,12 @@ nav.scrolled {
   letter-spacing: 0.02em;
   text-decoration: none;
   line-height: 1;
-  text-transform: none;
+  text-transform: lowercase;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   transition: opacity var(--duration-fast);
 }
 
 .nav-wordmark-fixed:hover {
-  color: var(--soft-cream);
-  opacity: 0.9;
-}
-
-.nav-wordmark {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: #fff;
-  letter-spacing: 0.02em;
-  text-decoration: none;
-  line-height: 1;
-  text-transform: none;
-  transition: opacity var(--duration-fast), color var(--duration-fast);
-}
-
-.nav-wordmark:hover {
   color: var(--soft-cream);
   opacity: 0.9;
 }
@@ -502,7 +485,7 @@ nav .nav-wordmark-spacer {
 .hero-image {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-end;
   padding-left: var(--space-lg);
 }
 
@@ -635,194 +618,6 @@ nav .nav-wordmark-spacer {
 
 .block-emphasis--break {
   margin-top: var(--space-xl);
-}
-
-/* ── MANIFESTO LAYOUT ── */
-.section-eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 0.7rem;
-  color: var(--charcoal-gray);
-  margin-bottom: var(--space-sm);
-}
-
-.section-eyebrow--light {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.hero-inner--manifesto {
-  align-items: center;
-}
-
-.hero-card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  padding: var(--space-lg);
-  color: #fff;
-  max-width: 420px;
-  width: 100%;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
-}
-
-.hero-card-eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: var(--space-sm);
-}
-
-.hero-card-title {
-  font-size: 1.4rem;
-  font-weight: 300;
-  margin-bottom: var(--space-sm);
-}
-
-.hero-card-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-size: 1rem;
-  line-height: 1.8;
-}
-
-.hero-card-list li {
-  padding: 0.4rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.hero-card-list li:last-child {
-  border-bottom: none;
-}
-
-.manifesto-grid {
-  display: grid;
-  gap: var(--space-lg);
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
-
-.split-grid {
-  display: grid;
-  gap: var(--space-lg);
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  align-items: start;
-}
-
-.manifesto-card {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: var(--space-lg);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
-  color: var(--charcoal-gray);
-}
-
-.block-section--dark .manifesto-card {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: none;
-  color: #fff;
-}
-
-.manifesto-card h3 {
-  font-size: 1.4rem;
-  font-weight: 300;
-  color: var(--warm-taupe);
-  margin-bottom: var(--space-sm);
-}
-
-.block-section--dark .manifesto-card h3 {
-  color: #fff;
-}
-
-.manifesto-card .block-body:last-child {
-  margin-bottom: 0;
-}
-
-.content-stack {
-  display: grid;
-  gap: var(--space-lg);
-}
-
-.content-block {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: var(--space-lg);
-  color: var(--charcoal-gray);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
-}
-
-.block-section--dark .content-block {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: none;
-  color: #fff;
-}
-
-.content-block h3 {
-  font-size: 1.45rem;
-  font-weight: 300;
-  color: var(--warm-taupe);
-  margin-bottom: var(--space-sm);
-}
-
-.block-section--dark .content-block h3 {
-  color: #fff;
-}
-
-.content-block .block-body:last-child {
-  margin-bottom: 0;
-}
-
-.card-label {
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--warm-taupe);
-  margin-bottom: 0.5rem;
-}
-
-.block-section--dark .card-label {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.bullet-list {
-  margin: 0 0 var(--space-md) 1.25rem;
-  padding: 0;
-  list-style: disc;
-}
-
-.bullet-list li {
-  margin-bottom: 0.35rem;
-}
-
-.bullet-list li:last-child {
-  margin-bottom: 0;
-}
-
-.quote-list {
-  list-style: none;
-  margin: 0 0 var(--space-md);
-  padding: 0;
-}
-
-.quote-list li {
-  padding-left: 1rem;
-  border-left: 2px solid var(--warm-taupe);
-  margin-bottom: 0.75rem;
-  font-style: italic;
-}
-
-.block-section--dark .quote-list li {
-  border-left-color: rgba(255, 255, 255, 0.4);
-}
-
-.cta-inner.cta-inner--single {
-  grid-template-columns: 1fr;
-  max-width: 960px;
-  margin: 0 auto;
 }
 
 /* ── BUILT DIFFERENTLY (Section 3) ── */
@@ -1430,19 +1225,6 @@ nav .nav-wordmark-spacer {
   .hero-product-img {
     height: min(42vh, 220px);
     max-width: 95vw;
-  }
-
-  .hero-card {
-    max-width: 100%;
-  }
-
-  .manifesto-card,
-  .content-block {
-    padding: var(--space-md);
-  }
-
-  .cta-inner.cta-inner--single {
-    max-width: 100%;
   }
 
   .built-inner {
