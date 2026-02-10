@@ -392,9 +392,9 @@ nav .nav-wordmark-spacer {
   position: relative;
   overflow: hidden;
   background-color: #1a1a1a;
-  background-image: url('/images/hero-bg.png');
+  background-image: url('/images/hero-combined.png');
   background-size: cover;
-  background-position: center;
+  background-position: center right;
   background-repeat: no-repeat;
   border: none;
 }
@@ -408,11 +408,9 @@ nav .nav-wordmark-spacer {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: var(--space-xl) var(--space-lg) calc(var(--space-xl) + 2rem);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
-  align-items: end;
+  padding: var(--space-xl) var(--space-lg);
+  display: flex;
+  align-items: center;
 }
 
 .hero-content {
@@ -421,9 +419,9 @@ nav .nav-wordmark-spacer {
 
 .hero h1 {
   font-family: var(--font);
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
   font-weight: 300;
-  line-height: 1.25;
+  line-height: 1.2;
   color: #fff;
   margin-bottom: var(--space-md);
   letter-spacing: 0.01em;
@@ -431,11 +429,12 @@ nav .nav-wordmark-spacer {
 
 .hero-sub {
   font-family: var(--font);
-  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
-  color: rgba(255, 255, 255, 0.95);
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.85);
   font-weight: 300;
-  line-height: 1.6;
-  margin-bottom: var(--space-sm);
+  line-height: 1.65;
+  margin-bottom: var(--space-md);
+  max-width: 32em;
 }
 
 .hero-tagline {
@@ -510,23 +509,7 @@ nav .nav-wordmark-spacer {
   margin: 0;
 }
 
-.hero-image {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  padding-left: var(--space-lg);
-}
-
-/* Proportional to hero: image height ~82.5vh (50% larger); dark bg dropped via blend */
-.hero-product-img {
-  display: block;
-  height: 82.5vh;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-  object-position: bottom right;
-  mix-blend-mode: lighten;
-}
+/* hero-image styles kept for mobile fallback if needed */
 
 /* ── BLOCK SECTIONS (2 & 3) ── */
 .block-section {
@@ -1232,27 +1215,19 @@ nav .nav-wordmark-spacer {
     padding-bottom: var(--space-lg);
   }
 
+  .hero {
+    background-position: bottom right;
+  }
+
   .hero-inner {
-    grid-template-columns: 1fr;
-    gap: var(--space-md);
+    flex-direction: column;
     text-align: center;
-    align-items: start;
     padding-top: var(--space-xl);
-    padding-bottom: 0;
+    padding-bottom: var(--space-xl);
   }
 
   .hero-content {
     max-width: none;
-  }
-
-  .hero-image {
-    justify-content: center;
-    padding-left: 0;
-  }
-
-  .hero-product-img {
-    height: min(42vh, 220px);
-    max-width: 95vw;
   }
 
   .built-inner {
@@ -1398,7 +1373,7 @@ nav .nav-wordmark-spacer {
   }
 
   .hero-product-img {
-    height: min(38vh, 200px);
+    max-width: 180px;
   }
 
   .hero h1 {
