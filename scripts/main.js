@@ -393,6 +393,17 @@ function initEmailForm() {
       showMessage("You're on the list. We'll be in touch.", 'success');
       emailInput.value = '';
 
+      // Send auto-response email
+      try {
+        await fetch('/api/send-welcome', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+      } catch (emailErr) {
+        console.warn('Welcome email failed:', emailErr);
+      }
+
       if (typeof gtag === 'function') {
         gtag('event', 'sign_up', { method: 'email', event_category: 'engagement' });
       }

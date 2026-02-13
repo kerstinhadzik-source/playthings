@@ -12,6 +12,12 @@
     "vite": "^5.4.0"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.45.0"
+    "@supabase/supabase-js": "^2.45.0",
+    "@xmldom/xmldom": "^0.8.11",
+    "adm-zip": "^0.5.16",
+    "docx": "^9.5.1",
+    "exceljs": "^4.4.0",
+    "mammoth": "^1.11.0",
+    "resend": "^6.9.2"
   }
 }
